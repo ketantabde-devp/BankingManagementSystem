@@ -103,5 +103,3 @@ Copy the returned JWT token and send it on protected requests:
 ## Security Notes
 This repository contains demo configuration only. Before deploying anywhere, replace the JWT secret and database credentials with environment variables or a secrets manager.
 
-## Interview Explanation
-The application follows Controller → Service → Repository architecture. JWT is used for stateless authentication. Spring Security validates the token before protected endpoints are reached. The service layer contains banking rules such as insufficient-balance checks. Fund transfers are marked `@Transactional`, so debit, credit and transaction-history inserts are handled as one database transaction.
